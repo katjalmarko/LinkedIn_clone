@@ -15,7 +15,7 @@ function App() {
       {/* Widgets */}
       </div>
     </div>
-  );
+  )
 }
 
 export default App;
