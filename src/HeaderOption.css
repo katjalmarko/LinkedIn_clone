@@ -1,10 +1,12 @@
 .headerOption {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-right: 20px;
   color: gray;
   cursor: pointer;
+  width: fit-content;
 }
 
 .headerOption_title {

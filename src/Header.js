@@ -7,8 +7,18 @@ import PeopleIcon from '@mui/icons-material/People';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import CommentIcon from '@mui/icons-material/Comment';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth } from './firebase';
+import { logout, selectUser } from './features/userSlice';
 
 function Header() {
+  const dispatch = useDispatch()
+
+  const logoutOfApp = () => {
+    dispatch(logout())
+    auth.signOut()
+  }
+
   return (
     <div className='header'>
       <div className="header_left">
@@ -16,7 +26,7 @@ function Header() {
 
             <div className="header_search">
               <SearchIcon />
-              <input type="text" />
+              <input placeholder='Search' type="text" />
             </div>
       </div>
       
@@ -26,7 +36,9 @@ function Header() {
               <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
               <HeaderOption Icon={CommentIcon} title="Messaging" />
               <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-              <HeaderOption avatar title="Me"/>
+              <HeaderOption avatar={true}
+              title="Me" onClick={logoutOfApp}
+              />
       </div>
     </div>
   );
