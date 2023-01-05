@@ -9,6 +9,8 @@
   display: flex;
   margin-top: 35px;
   max-width: 1200px;
+  width: 80vw;
   margin-left: 20px;
   margin-right: 20px;
+  margin: 0 auto;
 }
